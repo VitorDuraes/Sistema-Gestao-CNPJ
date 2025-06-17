@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão CNPJ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Gestão CNPJ</h1>
+            <p>Gerencie CNPJs e emails de clientes</p>
+        </header>
+
+        <main>
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="cnpjs">CNPJs (um por linha):</label>
+                    <textarea id="cnpjs" placeholder="Digite os CNPJs, um por linha&#10;Ex: 12.345.678/0001-90&#10;98.765.432/0001-10" rows="6"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="emails">Emails (um por linha):</label>
+                    <textarea id="emails" placeholder="Digite os emails, um por linha&#10;Ex: cliente@empresa.com&#10;contato@empresa.com" rows="4"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="action">Ação:</label>
+                    <select id="action">
+                        <option value="ADD">ADD</option>
+                        <option value="REMOVE">REMOVE</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="vendorName">Nome do Fornecedor:</label>
+                    <input type="text" id="vendorName" placeholder="Ex: AMBEV" value="AMBEV">
+                </div>
+
+                <div class="input-group">
+                    <label for="country">País:</label>
+                    <input type="text" id="country" placeholder="Ex: BR" value="BR" maxlength="2">
+                </div>
+
+                <button id="generateBtn" class="generate-btn">Gerar Planilha</button>
+            </div>
+
+            <div class="result-section">
+                <h2>Resultado</h2>
+                <div class="table-container">
+                    <table id="resultTable">
+                        <thead>
+                            <tr>
+                                <th>user</th>
+                                <th>country</th>
+                                <th>vendorAccountId</th>
+                                <th>vendorId</th>
+                                <th>vendorName</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultTableBody">
+                            <!-- Dados serão inseridos aqui -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="export-buttons">
+                    <button id="exportCsvBtn" class="export-btn" disabled>Exportar CSV</button>
+                    <button id="exportExcelBtn" class="export-btn" disabled>Exportar Excel</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
